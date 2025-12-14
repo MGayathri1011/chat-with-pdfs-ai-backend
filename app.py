@@ -25,3 +25,6 @@ async def upload_pdf(file: UploadFile = File(...)):
 async def chat(data: ChatRequest):
     answer = chat_with_pdf(data.question)
     return {"answer": answer}
+@app.get("/")
+def root():
+    return {"status":"backend is running"}
